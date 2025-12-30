@@ -81,6 +81,57 @@
   --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+[data-bs-theme="dark"] {
+  /* Fonds */
+  --bg-main: #1E1F1C;
+  --bg-secondary: #2C2F28;
+  --bg-sidebar: #2C2F28;
+  --bg-card: #2F332C;
+  --border-default: #3A3D36;
+
+  /* Texte */
+  --text-primary: #E6E8DC;
+  --text-secondary: #CFCFC0;
+  --text-muted: #8C9389;
+  --text-inverse: #1E1F1C;
+
+  /* Couleur principale */
+  --primary: #8FBF94;
+  --primary-hover: #5E8F5E;
+  --primary-light: #DFF2E5;
+
+  /* Accent bois / nature */
+  --accent-wood: #BFB7A6;
+  --accent-wood-light: #EAE6DE;
+
+  /* États sémantiques */
+  --info: #7CA7D9;
+  --info-bg: #2A3441;
+
+  --success: #8FBF94;
+  --success-bg: #2A332B;
+
+  --warning: #E0B973;
+  --warning-bg: #3C3728;
+
+  --error: #D97C7C;
+  --error-bg: #3D2929;
+
+  /* Liens */
+  --link: var(--primary);
+  --link-hover: var(--primary-hover);
+
+  /* Code blocks */
+  --code-bg: #2C2F28;
+  --code-text: #E6E8DC;
+  --code-comment: #A5A898;
+  --code-keyword: #8FBF94;
+  --code-string: #BFDDB1;
+  --code-number: #A7CFA2;
+  --code-border: #3A3D36;
+}
+
+
 /* Usage */
 
 body {
@@ -142,4 +193,39 @@ code {
   color: var(--navbar-link-active) !important;
   font-weight: 600;
 }
+
+
+/* Corps */
+[data-bs-theme="dark"] body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+/* Navbar */
+[data-bs-theme="dark"] .navbar {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-default);
+}
+
+/* Navbar items actifs */
+[data-bs-theme="dark"] .navbar-nav .nav-link.active,
+[data-bs-theme="dark"] .navbar-nav .nav-link.show {
+  color: var(--primary-hover) !important;
+  background-color: var(--primary-light) !important;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.5rem;
+}
+
+/* Code blocks */
+[data-bs-theme="dark"] pre,
+[data-bs-theme="dark"] code {
+  background-color: var(--code-bg);
+  color: var(--code-text);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-md);
+}
+
+
 
