@@ -25,11 +25,12 @@
       "my-template"
     ],
     "globalMetadata": {
-      "_appName": "emmavdc-documentation",
+      "_appName": "Emma Vdc Documentation",
       "_appTitle": "emmavdc-documentation",
       "_appFooter": "© 2025 Emma Vandecasteele",
       "_appLogoPath": "images/favicon.ico",
       "_appFaviconPath": "images/favicon.ico",
+      "_disableContribution": true,
       "_enableSearch": true,
       "pdf": false
     }
