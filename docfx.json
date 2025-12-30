@@ -28,6 +28,8 @@
       "_appName": "emmavdc-documentation",
       "_appTitle": "emmavdc-documentation",
       "_appFooter": "© 2025 Emma Vandecasteele",
+      "_appLogoPath": "images/favicon.ico",
+      "_appFaviconPath": "images/favicon.ico",
       "_enableSearch": true,
       "pdf": false
     }
