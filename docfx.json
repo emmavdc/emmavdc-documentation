@@ -22,14 +22,14 @@
     "template": [
       "default",
       "modern",
-      "templates/material"
-
+      "my-template"
     ],
     "globalMetadata": {
       "_appName": "emmavdc-documentation",
       "_appTitle": "emmavdc-documentation",
+      "_appFooter": "© 2025 Emma Vandecasteele",
       "_enableSearch": true,
-      "pdf": true
+      "pdf": false
     }
   }
 }
