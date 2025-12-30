@@ -228,4 +228,12 @@ code {
 }
 
 
+@media (max-width: 767px) {
+  .navbar > .container-xxl {
+      flex-wrap: wrap !important;
+  }
+}
+
+
+
 
