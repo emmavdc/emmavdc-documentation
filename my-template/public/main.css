@@ -11,11 +11,11 @@
     /* =========================
      Navbar
      ========================= */
-  --navbar-bg: #EDF0EB;           /* vert très clair / subtil */
-  --navbar-text: #2F332F;         /* texte charbon */
-  --navbar-link: var(--primary);  /* vert pâle */
-  --navbar-link-hover: var(--primary-hover); /* vert plus foncé */
-  --navbar-border-bottom: #D7DCD4; /* séparateur discret */
+  --navbar-bg: #EDF0EB;         
+  --navbar-text: #2F332F;        
+  --navbar-link: var(--primary); 
+  --navbar-link-hover: var(--primary-hover);
+  --navbar-border-bottom: #D7DCD4;
   --navbar-link-active: #6FA06E;
   --link-active-bg: #E6F2E6;
 
@@ -163,6 +163,9 @@ code {
   color: var(--code-text);
   border: 1px solid var(--code-border);
   border-radius: var(--radius-md);
+}
+
+code{
   padding: 0.1rem;
 }
 
