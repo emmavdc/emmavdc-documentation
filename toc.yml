@@ -1,4 +1,4 @@
-- name: Docs
-  href: docs/
-- name: Programming
-  href: programming/
+- name: Dotnet
+  href: docs/dotnet/
+- name: Web
+  href: docs/web/
