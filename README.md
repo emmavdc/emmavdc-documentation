@@ -1,7 +1,3 @@
-# emmavdc-documentation
-
----
-
 # Welcome to **Emma's Docs**
 
 ---
