@@ -163,7 +163,7 @@ code {
   color: var(--code-text);
   border: 1px solid var(--code-border);
   border-radius: var(--radius-md);
-  padding: 1rem;
+  padding: 0.1rem;
 }
 
 .navbar {
