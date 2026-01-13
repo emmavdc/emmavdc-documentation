@@ -1,7 +1,7 @@
+- name: Tech
+  href: docs/tech/
 - name: Web Apps
   href: docs/web/
-- name: .NET
-  href: docs/dotnet/
 - name: Dev Tips
   href: docs/dev-tips/
 - name: Mind

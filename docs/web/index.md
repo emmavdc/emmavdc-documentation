@@ -1,4 +1,4 @@
-# Web
+# Web Apps 🌐
 
 This section covers general web concepts.
 It applies to websites, web applications, and APIs.
