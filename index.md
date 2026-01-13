@@ -26,7 +26,7 @@ You will find backend projects, .NET experiments, DevOps notes, database tips, a
 ### Web 🌐
 Here, I dive into **web applications and front-end development**.  
 From HTML & CSS to JavaScript frameworks, you’ll find my coding experiments and mini-projects.  
-[Explore Web →](/docs/web/)
+[Explore Web →](~/docs/web/)
 
 ### Dev Tips 💻 
 Tips, tricks, and hacks for developers!  
