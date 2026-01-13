@@ -1,4 +1,12 @@
-- name: Web
+- name: Web Apps
   href: docs/web/
-- name: Dotnet
+- name: .NET
   href: docs/dotnet/
+- name: Dev Tips
+  href: docs/dev-tips/
+- name: Mind
+  href: docs/mind/
+- name: Spark
+  href: docs/spark/
+- name: Resources
+  href: docs/resources/
