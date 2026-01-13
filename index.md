@@ -33,7 +33,7 @@ Tips, tricks, and hacks for developers!
 Discover **Visual Studio shortcuts, VS Code extensions, Git workflow tips**, and other useful developer tools.  
 [Explore Dev Tips →](/docs/dev-tips/)
 
-### Mind 🧠
+### Mind 🌱
 A place for **learning, personal growth, and reflections**.  
 Language learning, study notes, and journaling ideas are all here.  
 [Explore Mind →](/docs/mind/)
