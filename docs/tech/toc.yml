@@ -4,3 +4,5 @@
   href: cheatsheet.md
 - name: Markdown Cheat Sheet
   href: markdown-cheatsheet.md
+- name: CI/CD Basics
+  href: ci-cd-basics.md
