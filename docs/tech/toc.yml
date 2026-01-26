@@ -6,3 +6,5 @@
   href: markdown-cheatsheet.md
 - name: CI/CD Basics
   href: ci-cd-basics.md
+- name: Aggregate & Aggregate Root in DDD
+  href: aggregate-vs-root-ddd.md
