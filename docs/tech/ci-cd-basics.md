@@ -1,5 +1,7 @@
 # CI/CD Basics (Azure DevOps Context)
 
+---
+
 ## What does CI/CD mean?
 CI/CD stands for **Continuous Integration** and **Continuous Deployment (or Delivery)**.
 

@@ -1,5 +1,7 @@
 # Aggregate & Aggregate Root in DDD
 
+---
+
 ## Aggregate  
 
 An **aggregate** is a **group** of domain objects (entities and value objects) that work together and must stay consistent with business rules.
@@ -133,7 +135,7 @@ public class Animal // Separate Aggregate Root
 - The aggregate root manages all changes and access for its group.
 - The aggregate is the root and everything it contains as a coherent whole.
 - If an entity (like Animal) needs to have independent business rules, it should become its own aggregate root.
-- You should **never** allow one aggregate root to directly modify another aggregate rootâs data.
+- You should **never** allow one aggregate root to directly modify another aggregate roots data.
 - Other members of the aggregate (entities/value objects) can only be accessed or changed through the root.
 
 ---
