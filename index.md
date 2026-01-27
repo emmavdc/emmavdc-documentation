@@ -21,29 +21,29 @@ Explore below to see what each corner of my site holds. 🌷
 ### Tech ⚙️
 This is where I share everything about **IT, development, and programming**.  
 You will find backend projects, .NET experiments, DevOps notes, database tips, and more.  
-[Explore Tech →](~/docs/tech/)
+[Explore Tech →](docs/tech/index.md)
 
 ### Web 🌐
 Here, I dive into **web applications and front-end development**.  
 From HTML & CSS to JavaScript frameworks, you’ll find my coding experiments and mini-projects.  
-[Explore Web →](~/docs/web/)
+[Explore Web →](docs/web/index.md)
 
 ### Dev Tips 💻 
 Tips, tricks, and hacks for developers!  
 Discover **Visual Studio shortcuts, VS Code extensions, Git workflow tips**, and other useful developer tools.  
-[Explore Dev Tips →](~/docs/dev-tips/)
+[Explore Dev Tips →](docs/dev-tips/index.md)
 
 ### Mind 🌱
 A place for **learning, personal growth, and reflections**.  
 Language learning, study notes, and journaling ideas are all here.  
-[Explore Mind →](~/docs/mind/)
+[Explore Mind →](docs/mind/index.md)
 
 ### Spark ✨ 
 For my **creative side**!  
 Here I talk about random hobbies or projects that inspire me.  
-[Explore Spark →](~/docs/spark/)
+[Explore Spark →](docs/spark/index.md)
 
 ### Resources 📚
 Links, books, tutorials, and references I find useful.  
 A collection of **resources for developers, learners, and curious minds**.  
-[Explore Resources →](~/docs/resources/)
+[Explore Resources →](docs/resources/index.md)
