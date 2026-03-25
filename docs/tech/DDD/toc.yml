@@ -1,4 +1,4 @@
 - name: Aggregate & Aggregate Root
-  href: aggregate-vs-root-ddd.md
+  href: aggregate-root-ddd.md
 - name: DDD Project Using a Single EF Core Model 
   href: ddd_single_efcore_model.md
