@@ -1,5 +1,7 @@
 - name: Code
   href: docs/code/
+- name: Architecture & Concepts
+  href: docs/architecture-and-concepts/
 - name: Web
   href: docs/web/
 - name: Dev Tools

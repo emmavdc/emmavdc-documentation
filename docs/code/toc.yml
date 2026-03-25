@@ -4,8 +4,3 @@
   href: cheatsheet.md
 - name: Markdown Cheat Sheet
   href: markdown-cheatsheet.md
-- name: CI/CD Basics
-  href: ci-cd-basics.md
-- name: DDD
-  homepage: DDD/index.md
-  href: DDD/toc.yml

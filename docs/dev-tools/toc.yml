@@ -1,2 +1,4 @@
 - name: Home
   href: index.md
+- name: CI/CD Basics
+  href: ci-cd-basics.md

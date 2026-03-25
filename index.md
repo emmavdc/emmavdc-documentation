@@ -23,6 +23,11 @@ A place for everything related to **programming and development**.
 Here I share notes, experiments, and discoveries with C#, .NET, Markdown, and more.  
 [Explore Code →](docs/code/index.md)
 
+### Architecture & Concepts 🏗️
+This section is dedicated to **understanding how software is designed and structured**.  
+You’ll find notes on architecture, design patterns, and important concepts I learn along the way.  
+[Explore Architecture & Concepts →](docs/architecture-and-concepts/index.md)
+
 ### Web 🌐
 Here, I dive into **web applications and front-end development**.  
 From HTML & CSS to JavaScript frameworks, you’ll find my coding experiments and mini-projects.  
