@@ -1,6 +1,4 @@
 - name: Home
   href: index.md
-- name: .NET Modern Cheat Sheet
-  href: cheatsheet.md
 - name: Markdown Cheat Sheet
   href: markdown-cheatsheet.md
