@@ -18,20 +18,20 @@ Let’s discover my world. Enjoy exploring! 🌷
 
 Explore below to see what each corner of my site holds. 🌷
 
-### Tech ⚙️
-This is where I share everything about **IT, development, and programming**.  
-You will find backend projects, .NET experiments, DevOps notes, database tips, and more.  
-[Explore Tech →](docs/tech/index.md)
+### Code ⚙️
+A place for everything related to **programming and development**.  
+Here I share notes, experiments, and discoveries with C#, .NET, Markdown, and more.  
+[Explore Code →](docs/code/index.md)
 
 ### Web 🌐
 Here, I dive into **web applications and front-end development**.  
 From HTML & CSS to JavaScript frameworks, you’ll find my coding experiments and mini-projects.  
 [Explore Web →](docs/web/index.md)
 
-### Dev Tips 💻 
+### Dev Tools 💻 
 Tips, tricks, and hacks for developers!  
-Discover **Visual Studio shortcuts, VS Code extensions, Git workflow tips**, and other useful developer tools.  
-[Explore Dev Tips →](docs/dev-tips/index.md)
+Discover **Visual Studio shortcuts, VS Code extensions, Git workflow tips, Azure DevOps**, and other useful developer tools.  
+[Explore Dev Tools →](docs/dev-tools/index.md)
 
 ### Mind 🌱
 A place for **learning, personal growth, and reflections**.  
@@ -42,8 +42,3 @@ Language learning, study notes, and journaling ideas are all here.
 For my **creative side**!  
 Here I talk about random hobbies or projects that inspire me.  
 [Explore Spark →](docs/spark/index.md)
-
-### Resources 📚
-Links, books, tutorials, and references I find useful.  
-A collection of **resources for developers, learners, and curious minds**.  
-[Explore Resources →](docs/resources/index.md)

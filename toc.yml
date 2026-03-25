@@ -1,12 +1,10 @@
-- name: Tech
-  href: docs/tech/
+- name: Code
+  href: docs/code/
 - name: Web
   href: docs/web/
-- name: Dev Tips
-  href: docs/dev-tips/
+- name: Dev Tools
+  href: docs/dev-tools/
 - name: Mind
   href: docs/mind/
 - name: Spark
   href: docs/spark/
-- name: Resources
-  href: docs/resources/
