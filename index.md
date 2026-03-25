@@ -8,7 +8,7 @@ Each time, I thought about ideas like creating a blog, a photography website, an
 
 So, what can you find on this website?
 To be honest, I don’t know exactly!
-You will probably find many topics, like programming documentation, language learning, and games.
+You will probably find many topics, like programming documentation, language learning, and random projects.
 
 Let’s discover my world. Enjoy exploring! 🌷
 
