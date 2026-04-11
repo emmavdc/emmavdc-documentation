@@ -37,13 +37,3 @@ From HTML & CSS to JavaScript frameworks, you’ll find my coding experiments an
 Tips, tricks, and hacks for developers!  
 Discover **Visual Studio shortcuts, VS Code extensions, Git workflow tips, Azure DevOps**, and other useful developer tools.  
 [Explore Dev Tools →](docs/dev-tools/index.md)
-
-### Mind 🌱
-A place for **learning, personal growth, and reflections**.  
-Language learning, study notes, and journaling ideas are all here.  
-[Explore Mind →](docs/mind/index.md)
-
-### Spark ✨ 
-For my **creative side**!  
-Here I talk about random hobbies or projects that inspire me.  
-[Explore Spark →](docs/spark/index.md)

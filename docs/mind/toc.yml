@@ -1,8 +1,0 @@
-- name: Home
-  href: index.md
-- name: Learning English
-  homepage: english/index.md
-  href: english/toc.yml
-- name: Learning Dutch
-  homepage: dutch/index.md
-  href: dutch/toc.yml
