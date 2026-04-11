@@ -3,3 +3,6 @@
 - name: DDD
   homepage: DDD/index.md
   href: DDD/toc.yml
+- name: NoSQL & Cosmos DB
+  homepage: NoSQLAndCosmos/index.md
+  href: NoSQLAndCosmos/toc.yml
