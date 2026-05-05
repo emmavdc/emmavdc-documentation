@@ -208,34 +208,12 @@ a:hover {
   background-color: var(--navbar-bg);
   color: var(--navbar-text);
   border-bottom: var(--navbar-border-bottom);
-  padding: 0 1.5rem;
-  min-height: 56px;
-  display: flex;
-  align-items: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   box-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 4px 20px rgba(0,0,0,0.2);
 }
 
-/* Assure que le container interne est bien aligné */
-.navbar > .container,
-.navbar > .container-fluid,
-.navbar > .container-xxl {
-  display: flex;
-  align-items: center;
-  min-height: 56px;
-}
 
-/* Items de nav alignés verticalement */
-.navbar-nav {
-  align-items: center;
-}
-
-.navbar-nav .nav-link {
-  display: flex;
-  align-items: center;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
-  line-height: 1;
-}
 
 .navbar a,
 .navbar .navbar-brand {
@@ -492,60 +470,85 @@ button[type="submit"],
    SEARCH
    ===================================================================== */
 
-/*
-  La search bar docfx est un <input> dans un wrapper .search
-  à l'intérieur de la navbar (toujours sombre).
-  On cible large pour couvrir toutes les variantes docfx.
-*/
-
-/* Wrapper search dans la navbar */
-.navbar .search {
-  position: relative;
-  display: flex;
+/* Wrapper search — flex row, items alignes au centre */
+.navbar .search,
+.navbar form.search,
+.navbar div.search {
+  display: flex !important;
+  flex-direction: row;
   align-items: center;
+  gap: 0;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
 }
 
-/* Le champ input search — fond semi-transparent sur navbar sombre */
+/* Input search */
 .navbar .search input,
-.navbar input[id="search"],
+.navbar form.search input,
+.navbar input#search,
+.navbar input[name="search"],
 .navbar input[type="search"],
-.navbar input[type="text"][placeholder*="earch"],
-.navbar input[aria-label*="earch"] {
-  background-color: rgba(255, 255, 255, 0.12) !important;
-  border: 1px solid rgba(200, 216, 200, 0.25) !important;
-  border-radius: var(--radius-sm);
+.navbar input[type="text"] {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(200, 216, 200, 0.3) !important;
+  border-radius: var(--radius-sm) !important;
   color: #D4EDCF !important;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  padding: 0.35rem 0.75rem 0.35rem 2rem;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.85rem !important;
+  line-height: 1.4 !important;
+  height: 34px !important;
   min-width: 180px;
+  vertical-align: middle;
+  box-shadow: none !important;
+  -webkit-appearance: none;
   transition: border-color 0.15s ease, background 0.15s ease;
 }
 
 .navbar .search input:focus,
-.navbar input[id="search"]:focus,
-.navbar input[type="search"]:focus {
+.navbar form.search input:focus,
+.navbar input#search:focus,
+.navbar input[type="search"]:focus,
+.navbar input[type="text"]:focus {
   outline: none !important;
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  border-color: rgba(110, 201, 123, 0.6) !important;
-  box-shadow: 0 0 0 2px rgba(110, 201, 123, 0.15);
+  background-color: rgba(255, 255, 255, 0.18) !important;
+  border-color: rgba(110, 201, 123, 0.55) !important;
+  box-shadow: 0 0 0 2px rgba(110, 201, 123, 0.15) !important;
 }
 
 .navbar .search input::placeholder,
-.navbar input[id="search"]::placeholder,
-.navbar input[type="search"]::placeholder {
-  color: rgba(200, 216, 200, 0.4) !important;
+.navbar form.search input::placeholder,
+.navbar input#search::placeholder,
+.navbar input[type="search"]::placeholder,
+.navbar input[type="text"]::placeholder {
+  color: rgba(200, 216, 200, 0.38) !important;
+  line-height: 1.4;
 }
 
-/* Icône loupe — visible sur fond sombre */
-.navbar .search svg,
-.navbar .search .bi,
-.navbar .search [class*="icon"],
-.navbar .search button {
+/* Bouton loupe a cote de l'input */
+.navbar .search button,
+.navbar .search [type="submit"],
+.navbar .search .btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 34px !important;
+  padding: 0 0.5rem !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
   color: rgba(200, 216, 200, 0.55) !important;
-  position: absolute;
-  left: 0.55rem;
-  pointer-events: none;
+  line-height: 1 !important;
+}
+
+/* Icone loupe (bi-search ou svg) */
+.navbar .search .bi-search,
+.navbar .search button .bi,
+.navbar .search svg {
+  display: block;
+  color: rgba(200, 216, 200, 0.55) !important;
+  font-size: 0.9rem;
+  line-height: 1;
 }
 
 /* Search hors navbar (page de resultats) */
@@ -750,47 +753,46 @@ footer a:hover {
 }
 
 /* =====================================================================
-   RESPONSIVE — MOBILE
+   RESPONSIVE — MOBILE (breakpoint md = 768px, aligne avec d-md-none docfx)
    ===================================================================== */
-@media (max-width: 991px) {
-  /* Le container wrap pour laisser place au menu deroulant */
-  .navbar > .container,
-  .navbar > .container-fluid,
-  .navbar > .container-xxl {
-    flex-wrap: wrap !important;
-    align-items: center;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    min-height: auto;
-  }
 
-  /* Le collapse prend toute la largeur */
-  .navbar-collapse {
-    width: 100%;
-    background-color: var(--navbar-bg);
-    padding: 0.5rem 0 0.75rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    margin-top: 0.25rem;
-  }
-
-  /* Items de nav : centres */
+/* Desktop : nav items alignes verticalement */
+@media (min-width: 768px) {
   .navbar-nav {
-    width: 100%;
-    align-items: center !important;
-    text-align: center;
-    gap: 0.15rem;
+    align-items: center;
   }
-
-  .navbar-nav .nav-item {
-    width: 100%;
-    text-align: center;
-  }
-
   .navbar-nav .nav-link {
-    display: block !important;
-    text-align: center !important;
-    padding: 0.55rem 1rem !important;
-    justify-content: center;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    line-height: 1;
+  }
+}
+
+/* Mobile : styles du panneau ouvert uniquement */
+/* NE PAS toucher display/visibility — docfx gere ca avec d-md-none */
+@media (max-width: 767.98px) {
+  /* Fond du panneau #navpanel quand il est ouvert */
+  #navpanel {
+    background-color: var(--navbar-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.5rem 0 0.75rem;
+  }
+
+  /* Items centres dans le panneau */
+  #navpanel .navbar-nav {
+    width: 100%;
+    text-align: center;
+    gap: 0.1rem;
+  }
+
+  #navpanel .navbar-nav .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  #navpanel .navbar-nav .nav-link {
+    text-align: center;
+    padding: 0.55rem 1rem;
     font-size: 0.9rem;
     border-radius: var(--radius-sm);
     margin: 0 auto;
@@ -798,22 +800,20 @@ footer a:hover {
     min-width: 160px;
   }
 
-  .navbar-nav .nav-link:hover {
+  #navpanel .navbar-nav .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.06);
   }
 
-  /* Search dans le collapse mobile */
-  .navbar-collapse .search,
-  .navbar-collapse form[role="search"],
-  .navbar-collapse .form-inline {
+  /* Search dans le panneau mobile */
+  #navpanel .search {
     display: flex;
     justify-content: center;
     padding: 0.5rem 1rem 0.25rem;
   }
 
-  .navbar-collapse input[type="search"],
-  .navbar-collapse input[type="text"],
-  .navbar-collapse #search {
+  #navpanel input[type="search"],
+  #navpanel input[type="text"],
+  #navpanel #search {
     width: 100%;
     max-width: 280px;
   }
@@ -824,5 +824,34 @@ footer a:hover {
 
   article, .content, .article {
     max-width: 100%;
+  }
+}
+
+/* =====================================================================
+   OVERRIDE FINAL — Search bar (neutralise Bootstrap .form-control)
+   ===================================================================== */
+.navbar input.form-control,
+.navbar .form-control,
+.navbar .input-group input,
+.navbar .input-group .form-control {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(200, 216, 200, 0.3) !important;
+  color: #D4EDCF !important;
+  box-shadow: none !important;
+}
+.navbar input.form-control:focus,
+.navbar .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.18) !important;
+  border-color: rgba(110, 201, 123, 0.55) !important;
+  box-shadow: 0 0 0 2px rgba(110, 201, 123, 0.15) !important;
+  color: #D4EDCF !important;
+}
+.navbar input.form-control::placeholder,
+.navbar .form-control::placeholder {
+  color: rgba(200, 216, 200, 0.38) !important;
+}
+@media (max-width: 767px) {
+  .navbar > .container-xxl {
+      flex-wrap: wrap !important;
   }
 }
