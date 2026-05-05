@@ -491,46 +491,64 @@ button[type="submit"],
 /* =====================================================================
    SEARCH
    ===================================================================== */
-/* Search dans la navbar (fond sombre) */
-.navbar #search,
+
+/*
+  La search bar docfx est un <input> dans un wrapper .search
+  à l'intérieur de la navbar (toujours sombre).
+  On cible large pour couvrir toutes les variantes docfx.
+*/
+
+/* Wrapper search dans la navbar */
+.navbar .search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Le champ input search — fond semi-transparent sur navbar sombre */
 .navbar .search input,
-.navbar form[role="search"] input,
+.navbar input[id="search"],
 .navbar input[type="search"],
-.navbar input[type="text"] {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+.navbar input[type="text"][placeholder*="earch"],
+.navbar input[aria-label*="earch"] {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(200, 216, 200, 0.25) !important;
   border-radius: var(--radius-sm);
-  color: var(--navbar-text);
+  color: #D4EDCF !important;
   font-family: 'DM Sans', sans-serif;
   font-size: 0.85rem;
-  padding: 0.35rem 0.75rem;
+  padding: 0.35rem 0.75rem 0.35rem 2rem;
+  min-width: 180px;
   transition: border-color 0.15s ease, background 0.15s ease;
 }
-.navbar #search:focus,
+
 .navbar .search input:focus,
-.navbar form[role="search"] input:focus,
-.navbar input[type="search"]:focus,
-.navbar input[type="text"]:focus {
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.18);
-  border-color: var(--navbar-link-active);
-  box-shadow: 0 0 0 2px rgba(110, 201, 123, 0.2);
+.navbar input[id="search"]:focus,
+.navbar input[type="search"]:focus {
+  outline: none !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(110, 201, 123, 0.6) !important;
+  box-shadow: 0 0 0 2px rgba(110, 201, 123, 0.15);
 }
-.navbar #search::placeholder,
+
 .navbar .search input::placeholder,
-.navbar input[type="search"]::placeholder,
-.navbar input[type="text"]::placeholder {
-  color: rgba(200, 216, 200, 0.45);
+.navbar input[id="search"]::placeholder,
+.navbar input[type="search"]::placeholder {
+  color: rgba(200, 216, 200, 0.4) !important;
 }
 
-/* Icône loupe dans la search bar */
-.navbar .search-icon,
-.navbar .bi-search,
-.navbar [class*="search"] svg {
-  color: rgba(200, 216, 200, 0.6);
+/* Icône loupe — visible sur fond sombre */
+.navbar .search svg,
+.navbar .search .bi,
+.navbar .search [class*="icon"],
+.navbar .search button {
+  color: rgba(200, 216, 200, 0.55) !important;
+  position: absolute;
+  left: 0.55rem;
+  pointer-events: none;
 }
 
-/* Search hors navbar (page de résultats) */
+/* Search hors navbar (page de resultats) */
 #search,
 .search input {
   background-color: var(--bg-card);
@@ -680,49 +698,124 @@ footer a:hover {
 }
 
 /* =====================================================================
-   RESPONSIVE
-   ===================================================================== */
-/* =====================================================================
    HAMBURGER / TOGGLER (mobile)
    ===================================================================== */
 
 /* La navbar est toujours sombre → le toggler doit être clair */
 .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.3) !important;
+  border: 1px solid rgba(200, 216, 200, 0.35) !important;
+  background-color: rgba(255, 255, 255, 0.06);
   padding: 0.3rem 0.55rem;
   border-radius: var(--radius-sm);
   transition: background 0.15s ease;
 }
 .navbar-toggler:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.12);
 }
 .navbar-toggler:focus {
-  box-shadow: 0 0 0 2px rgba(110, 201, 123, 0.4);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(110, 201, 123, 0.4) !important;
 }
 
-/* Icône "..." / hamburger — forcer la couleur claire */
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(200,216,200,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+/* Icône bi-three-dots — c'est un <i class="bi bi-three-dots"> avec ::before */
+/* La navbar est toujours sombre, donc on force la couleur claire */
+.navbar .bi-three-dots,
+.navbar .btn .bi-three-dots {
+  color: #A8CBAA !important;
+  font-size: 1.4rem;
+  line-height: 1;
 }
 
-/* Collapse menu sur mobile : fond sombre comme la navbar */
-.navbar-collapse {
-  background-color: var(--navbar-bg);
+.navbar .bi-three-dots::before {
+  color: #A8CBAA !important;
 }
 
-@media (max-width: 767px) {
+/* Bouton qui contient l'icône */
+.navbar .btn.d-md-none,
+.navbar button[data-bs-target="#navpanel"] {
+  border: 1px solid rgba(200, 216, 200, 0.3) !important;
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.55rem;
+  transition: background 0.15s ease;
+  line-height: 1;
+}
+.navbar .btn.d-md-none:hover,
+.navbar button[data-bs-target="#navpanel"]:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+.navbar .btn.d-md-none:focus,
+.navbar button[data-bs-target="#navpanel"]:focus {
+  box-shadow: 0 0 0 2px rgba(110, 201, 123, 0.35) !important;
+  outline: none;
+}
+
+/* =====================================================================
+   RESPONSIVE — MOBILE
+   ===================================================================== */
+@media (max-width: 991px) {
+  /* Le container wrap pour laisser place au menu deroulant */
+  .navbar > .container,
+  .navbar > .container-fluid,
   .navbar > .container-xxl {
     flex-wrap: wrap !important;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    min-height: auto;
   }
 
+  /* Le collapse prend toute la largeur */
   .navbar-collapse {
+    width: 100%;
+    background-color: var(--navbar-bg);
     padding: 0.5rem 0 0.75rem;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     margin-top: 0.25rem;
   }
 
+  /* Items de nav : centres */
+  .navbar-nav {
+    width: 100%;
+    align-items: center !important;
+    text-align: center;
+    gap: 0.15rem;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
   .navbar-nav .nav-link {
-    padding: 0.45rem 0.5rem;
+    display: block !important;
+    text-align: center !important;
+    padding: 0.55rem 1rem !important;
+    justify-content: center;
+    font-size: 0.9rem;
+    border-radius: var(--radius-sm);
+    margin: 0 auto;
+    width: fit-content;
+    min-width: 160px;
+  }
+
+  .navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+  /* Search dans le collapse mobile */
+  .navbar-collapse .search,
+  .navbar-collapse form[role="search"],
+  .navbar-collapse .form-inline {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 1rem 0.25rem;
+  }
+
+  .navbar-collapse input[type="search"],
+  .navbar-collapse input[type="text"],
+  .navbar-collapse #search {
+    width: 100%;
+    max-width: 280px;
   }
 
   h1 { font-size: 1.6rem; }
