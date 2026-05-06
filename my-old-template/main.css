@@ -1,0 +1,256 @@
+:root {
+  /* =========================
+     Base – Fonds & structure
+     ========================= */
+  --bg-main: #F7F8F6;
+  --bg-secondary: #EDF0EB;
+  --bg-sidebar: #EDF0EB;
+  --bg-card: #E6EBE4;
+  --border-default: #D7DCD4;
+
+  /* =========================
+     Navbar
+     ========================= */
+  --navbar-bg: #EDF0EB;         
+  --navbar-text: #2F332F;        
+  --navbar-link: var(--primary); 
+  --navbar-link-hover: var(--primary-hover);
+  --navbar-border-bottom: #D7DCD4;
+  --navbar-link-active: #6FA06E;
+  --link-active-bg: #E6F2E6;
+
+  /* =========================
+     Texte
+     ========================= */
+  --text-primary: #2F332F;
+  --text-secondary: #5A6158;
+  --text-muted: #8C9389;
+  --text-inverse: #F0F4F0;
+
+  /* =========================
+     Couleur principale – Vert Nature
+     ========================= */
+  --primary: #6FA06E;
+  --primary-hover: #4E7F4E;
+  --primary-light: #DFF2E5;
+
+  /* =========================
+     Accent Bois / Naturel
+     ========================= */
+  --accent-wood: #CFC3B7;
+  --accent-wood-light: #EAE6DE;
+
+  /* =========================
+     États sémantiques
+     ========================= */
+  --info: #7CA7D9;
+  --info-bg: #EDF6FB;
+
+  --success: #8FBF94;
+  --success-bg: #E6F2E6;
+
+  --warning: #E0B973;
+  --warning-bg: #FBF3E3;
+
+  --error: #D97C7C;
+  --error-bg: #FBEAEA;
+
+  /* =========================
+     Liens
+     ========================= */
+  --link: var(--primary);
+  --link-hover: var(--primary-hover);
+
+  /* =========================
+     Code blocks
+     ========================= */
+  --code-bg: #F0F4F0;
+  --code-text: #2F332F;
+  --code-comment: #7A837A;
+  --code-keyword: #6FA06E;
+  --code-string: #A7CFA2;
+  --code-number: #8FBF94;
+  --code-border: #D7DCD4;
+
+  /* =========================
+     UI divers
+     ========================= */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+[data-bs-theme="dark"] {
+  /* Fonds */
+  --bg-main: #1E1F1C;
+  --bg-secondary: #2C2F28;
+  --bg-sidebar: #2C2F28;
+  --bg-card: #2F332C;
+  --border-default: #3A3D36;
+
+  /* Texte */
+  --text-primary: #E6E8DC;
+  --text-secondary: #CFCFC0;
+  --text-muted: #8C9389;
+  --text-inverse: #1E1F1C;
+
+  /* Couleur principale */
+  --primary: #8FBF94;
+  --primary-hover: #5E8F5E;
+  --primary-light: #DFF2E5;
+
+  /* Accent bois / nature */
+  --accent-wood: #BFB7A6;
+  --accent-wood-light: #EAE6DE;
+
+  /* États sémantiques */
+  --info: #7CA7D9;
+  --info-bg: #2A3441;
+
+  --success: #8FBF94;
+  --success-bg: #2A332B;
+
+  --warning: #E0B973;
+  --warning-bg: #3C3728;
+
+  --error: #D97C7C;
+  --error-bg: #3D2929;
+
+  /* Liens */
+  --link: var(--primary);
+  --link-hover: var(--primary-hover);
+
+  /* Code blocks */
+  --code-bg: #2C2F28;
+  --code-text: #E6E8DC;
+  --code-comment: #A5A898;
+  --code-keyword: #8FBF94;
+  --code-string: #BFDDB1;
+  --code-number: #A7CFA2;
+  --code-border: #3A3D36;
+}
+
+
+/* Usage */
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+.sidefilter,
+.sidetoc {
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-default);
+}
+
+a {
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+h1, h2, h3 {
+  color: var(--primary);
+}
+
+pre,
+code {
+  background-color: var(--code-bg);
+  color: var(--code-text);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-md);
+}
+
+code {
+  padding: 0.1rem;
+}
+
+.navbar {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+  border-bottom: 1px solid var(--navbar-border-bottom);
+  padding: 0.75rem 1.5rem;
+}
+
+.navbar a {
+  color: var(--navbar-link);
+  text-decoration: none;
+  margin-right: 1rem;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  color: var(--navbar-link-hover);
+}
+
+.navbar .active {
+  color: var(--primary-hover);
+  font-weight: 600;
+}
+
+.navbar a.active {
+  color: var(--navbar-link-active) !important;
+  font-weight: 600;
+}
+
+
+/* Corps */
+[data-bs-theme="dark"] body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+/* Navbar */
+[data-bs-theme="dark"] .navbar {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-default);
+}
+
+/* Navbar items actifs */
+[data-bs-theme="dark"] .navbar-nav .nav-link.active,
+[data-bs-theme="dark"] .navbar-nav .nav-link.show {
+  color: var(--primary-hover) !important;
+  background-color: var(--primary-light) !important;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.5rem;
+}
+
+/* Code blocks */
+[data-bs-theme="dark"] pre,
+[data-bs-theme="dark"] code {
+  background-color: var(--code-bg);
+  color: var(--code-text);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-md);
+}
+
+
+@media (max-width: 767px) {
+  .navbar > .container-xxl {
+      flex-wrap: wrap !important;
+  }
+}
+/* Centrage */
+.mermaid {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  /* style visuel amélioré */
+  background-color: var(--bg-card);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-soft);
+}
+
+/* SVG centré proprement */
+.mermaid svg {
+  margin: auto;
+}
