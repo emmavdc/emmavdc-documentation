@@ -1,0 +1,857 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&family=Lora:ital,wght@0,500;0,600;1,500&display=swap');
+
+/* =============================================================
+   EMMAVDC DOCS — main.css
+   Palette : Vert forêt profond + Ivoire + Charbon
+   Typo    : DM Sans (UI) · Lora (display) · DM Mono (code)
+   ============================================================= */
+
+:root {
+  /* =========================
+     Base – Fonds & structure
+     ========================= */
+  --bg-main:        #F5F4EF;       /* ivoire chaud, pas blanc pur */
+  --bg-secondary:   #EDECEA;
+  --bg-sidebar:     #EDECEA;
+  --bg-card:        #E6E4DF;
+  --border-default: #D0CEC8;
+
+  /* =========================
+     Navbar
+     ========================= */
+  --navbar-bg:           #1C2B1C;   /* vert forêt très sombre */
+  --navbar-text:         #E8EDE4;
+  --navbar-link:         #A8CBAA;
+  --navbar-link-hover:   #D4EDCF;
+  --navbar-border-bottom: transparent;
+  --navbar-link-active:  #6EC97B;
+  --link-active-bg:      rgba(110, 201, 123, 0.15);
+
+  /* =========================
+     Texte
+     ========================= */
+  --text-primary:   #1A1F1A;   /* quasi-noir à teinte verte */
+  --text-secondary: #4A5248;
+  --text-muted:     #7A8478;
+  --text-inverse:   #F0F4F0;
+
+  /* =========================
+     Couleur principale
+     ========================= */
+  --primary:        #2E6B3A;   /* vert forêt profond, lisible */
+  --primary-hover:  #1C4A25;
+  --primary-light:  #DDF0E2;
+
+  /* =========================
+     Accent chaud / Sauge
+     ========================= */
+  --accent-sage:       #7FA882;
+  --accent-sage-light: #EAF2EB;
+
+  /* =========================
+     Accent doré subtil
+     ========================= */
+  --accent-gold:       #B5923C;
+  --accent-gold-light: #F7F0DC;
+
+  /* =========================
+     États sémantiques
+     ========================= */
+  --info:       #4A8FC0;
+  --info-bg:    #EAF3FA;
+
+  --success:    #3A7D44;
+  --success-bg: #E2F4E8;
+
+  --warning:    #C07A20;
+  --warning-bg: #FBF2E0;
+
+  --error:      #B84040;
+  --error-bg:   #FAEAEA;
+
+  /* =========================
+     Liens
+     ========================= */
+  --link:       var(--primary);
+  --link-hover: var(--primary-hover);
+
+  /* =========================
+     Code blocks
+     ========================= */
+  --code-bg:      #F0EFE8;
+  --code-text:    #1A1F1A;
+  --code-comment: #7A8478;
+  --code-keyword: #2E6B3A;
+  --code-string:  #5A8C3A;
+  --code-number:  #B5923C;
+  --code-border:  #D0CEC8;
+
+  /* =========================
+     Radius & Ombres
+     ========================= */
+  --radius-sm:   3px;
+  --radius-md:   6px;
+  --radius-lg:   10px;
+  --shadow-soft: 0 1px 4px rgba(26, 31, 26, 0.07), 0 4px 16px rgba(26, 31, 26, 0.04);
+  --shadow-card: 0 2px 8px rgba(26, 31, 26, 0.08), 0 8px 24px rgba(26, 31, 26, 0.05);
+}
+
+/* =====================================================================
+   DARK MODE
+   ===================================================================== */
+[data-bs-theme="dark"] {
+  --bg-main:        #161A16;
+  --bg-secondary:   #1E251E;
+  --bg-sidebar:     #1E251E;
+  --bg-card:        #242B24;
+  --border-default: #2E382E;
+
+  --navbar-bg:           #0E160E;
+  --navbar-text:         #C8D8C8;
+  --navbar-link:         #7AB87E;
+  --navbar-link-hover:   #B0D4B4;
+  --navbar-border-bottom: transparent;
+  --navbar-link-active:  #6EC97B;
+  --link-active-bg:      rgba(110, 201, 123, 0.12);
+
+  --text-primary:   #DDE8DC;
+  --text-secondary: #A8B8A8;
+  --text-muted:     #6A7A6A;
+  --text-inverse:   #161A16;
+
+  --primary:        #6EC97B;
+  --primary-hover:  #98DA9F;
+  --primary-light:  rgba(110, 201, 123, 0.15);
+
+  --accent-sage:       #6A9870;
+  --accent-sage-light: rgba(106, 152, 112, 0.15);
+
+  --accent-gold:       #C8A84A;
+  --accent-gold-light: rgba(200, 168, 74, 0.12);
+
+  --info:       #6AABDC;
+  --info-bg:    #1A2A38;
+
+  --success:    #6EC97B;
+  --success-bg: #1A2E1E;
+
+  --warning:    #D4963A;
+  --warning-bg: #2E2418;
+
+  --error:      #D47070;
+  --error-bg:   #2E1A1A;
+
+  --code-bg:      #1E251E;
+  --code-text:    #DDE8DC;
+  --code-comment: #6A7A6A;
+  --code-keyword: #6EC97B;
+  --code-string:  #98DA9F;
+  --code-number:  #C8A84A;
+  --code-border:  #2E382E;
+
+  --shadow-soft: 0 1px 4px rgba(0, 0, 0, 0.25), 0 4px 16px rgba(0, 0, 0, 0.15);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* =====================================================================
+   TYPOGRAPHIE GLOBALE
+   ===================================================================== */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings avec Lora pour l'élégance */
+h1, h2, h3, h4, h5, h6,
+.article h1, .article h2, .article h3 {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--primary);
+}
+
+h1 { font-size: 2rem;    margin-bottom: 1rem; }
+h2 { font-size: 1.5rem;  margin-top: 2.5rem; margin-bottom: 0.75rem; }
+h3 { font-size: 1.2rem;  margin-top: 2rem;   margin-bottom: 0.5rem; }
+h4 { font-size: 1.05rem; font-family: 'DM Sans', sans-serif; font-weight: 600; color: var(--text-primary); }
+
+/* Paragraphes */
+p {
+  color: var(--text-secondary);
+  margin-bottom: 1.1rem;
+}
+
+/* Liens */
+a {
+  color: var(--link);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* =====================================================================
+   NAVBAR
+   ===================================================================== */
+.navbar {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+  border-bottom: var(--navbar-border-bottom);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 4px 20px rgba(0,0,0,0.2);
+}
+
+
+
+.navbar a,
+.navbar .navbar-brand {
+  color: var(--navbar-link) !important;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+  transition: color 0.15s ease;
+}
+
+.navbar a:hover {
+  color: var(--navbar-link-hover) !important;
+  text-decoration: none;
+}
+
+.navbar .navbar-brand {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--navbar-link-hover) !important;
+  letter-spacing: -0.01em;
+}
+
+.navbar a.active,
+.navbar .active {
+  color: var(--navbar-link-active) !important;
+  font-weight: 600;
+}
+
+/* =====================================================================
+   SIDEBAR / TOC
+   ===================================================================== */
+.sidefilter,
+.sidetoc {
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-default);
+}
+
+.sidetoc .nav > li > a,
+.sidetoc .nav-item a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.sidetoc .nav > li > a:hover,
+.sidetoc .nav-item a:hover {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.sidetoc .nav > li.active > a,
+.sidetoc .nav-item.active a {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-weight: 600;
+  border-left: 2px solid var(--primary);
+  padding-left: calc(0.75rem - 2px);
+}
+
+/* Filter input dans la sidebar */
+.sidefilter input {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.75rem;
+  width: 100%;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.sidefilter input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* =====================================================================
+   CONTENU PRINCIPAL / ARTICLE
+   ===================================================================== */
+article,
+.content,
+.article {
+  max-width: 760px;
+}
+
+/* Séparateur horizontal */
+hr {
+  border: none;
+  border-top: 1px solid var(--border-default);
+  margin: 2rem 0;
+}
+
+/* Blockquote */
+blockquote {
+  border-left: 3px solid var(--accent-sage);
+  background-color: var(--accent-sage-light);
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+blockquote p {
+  margin-bottom: 0;
+  color: inherit;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+thead th {
+  background-color: var(--primary);
+  color: var(--text-inverse);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.65rem 1rem;
+  text-align: left;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--border-default);
+  transition: background 0.1s ease;
+}
+tbody tr:hover {
+  background-color: var(--bg-secondary);
+}
+tbody td {
+  padding: 0.6rem 1rem;
+  color: var(--text-secondary);
+}
+
+/* =====================================================================
+   CODE
+   ===================================================================== */
+pre,
+code {
+  font-family: 'DM Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  color: var(--code-text);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-md);
+}
+
+code {
+  padding: 0.15em 0.45em;
+  font-size: 0.85em;
+  border-radius: var(--radius-sm);
+  color: var(--primary);
+}
+
+pre {
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  line-height: 1.65;
+  box-shadow: var(--shadow-soft);
+}
+
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font-size: 1em;
+  border-radius: 0;
+}
+
+/* =====================================================================
+   ALERTS / CALLOUTS (docfx)
+   ===================================================================== */
+.alert,
+.NOTE, .TIP, .IMPORTANT, .WARNING, .CAUTION {
+  border: none;
+  border-left: 3px solid;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+}
+
+.alert-info, .NOTE    { background: var(--info-bg);    border-color: var(--info);    color: var(--info); }
+.alert-success, .TIP  { background: var(--success-bg); border-color: var(--success); color: var(--success); }
+.alert-warning, .WARNING, .IMPORTANT { background: var(--warning-bg); border-color: var(--warning); color: var(--warning); }
+.alert-danger, .CAUTION { background: var(--error-bg); border-color: var(--error);   color: var(--error); }
+
+.alert p, .NOTE p, .TIP p, .WARNING p, .IMPORTANT p, .CAUTION p {
+  margin-bottom: 0;
+  color: inherit;
+}
+
+/* =====================================================================
+   BOUTONS
+   ===================================================================== */
+.btn-primary,
+button[type="submit"],
+.button-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 1rem;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  box-shadow: 0 2px 8px rgba(46, 107, 58, 0.25);
+}
+
+/* =====================================================================
+   MERMAID DIAGRAMS
+   ===================================================================== */
+.mermaid {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-card);
+  margin: 1.5rem 0;
+}
+
+.mermaid svg {
+  margin: auto;
+}
+
+/* =====================================================================
+   SEARCH
+   ===================================================================== */
+
+/* Wrapper search — flex row, items alignes au centre */
+.navbar .search,
+.navbar form.search,
+.navbar div.search {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Input search */
+.navbar .search input,
+.navbar form.search input,
+.navbar input#search,
+.navbar input[name="search"],
+.navbar input[type="search"],
+.navbar input[type="text"] {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(200, 216, 200, 0.3) !important;
+  border-radius: var(--radius-sm) !important;
+  color: #D4EDCF !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.85rem !important;
+  line-height: 1.4 !important;
+  height: 34px !important;
+  min-width: 180px;
+  vertical-align: middle;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.navbar .search input:focus,
+.navbar form.search input:focus,
+.navbar input#search:focus,
+.navbar input[type="search"]:focus,
+.navbar input[type="text"]:focus {
+  outline: none !important;
+  background-color: rgba(255, 255, 255, 0.18) !important;
+  border-color: rgba(110, 201, 123, 0.55) !important;
+  box-shadow: 0 0 0 2px rgba(110, 201, 123, 0.15) !important;
+}
+
+.navbar .search input::placeholder,
+.navbar form.search input::placeholder,
+.navbar input#search::placeholder,
+.navbar input[type="search"]::placeholder,
+.navbar input[type="text"]::placeholder {
+  color: rgba(200, 216, 200, 0.38) !important;
+  line-height: 1.4;
+}
+
+/* Bouton loupe a cote de l'input */
+.navbar .search button,
+.navbar .search [type="submit"],
+.navbar .search .btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 34px !important;
+  padding: 0 0.5rem !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: rgba(200, 216, 200, 0.55) !important;
+  line-height: 1 !important;
+}
+
+/* Icone loupe (bi-search ou svg) */
+.navbar .search .bi-search,
+.navbar .search button .bi,
+.navbar .search svg {
+  display: block;
+  color: rgba(200, 216, 200, 0.55) !important;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+/* Search hors navbar (page de resultats) */
+#search,
+.search input {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  padding: 0.45rem 0.9rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+#search:focus,
+.search input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+#search::placeholder,
+.search input::placeholder {
+  color: var(--text-muted);
+}
+
+/* =====================================================================
+   BREADCRUMB
+   ===================================================================== */
+.breadcrumb {
+  font-size: 0.8rem;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-muted);
+  background: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+.breadcrumb-item a { color: var(--text-muted); }
+.breadcrumb-item.active { color: var(--text-secondary); font-weight: 500; }
+.breadcrumb-item + .breadcrumb-item::before { color: var(--text-muted); }
+
+/* =====================================================================
+   IN-THIS-ARTICLE (TOC de droite)
+   ===================================================================== */
+.affix {
+  font-size: 0.8rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.affix ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.affix li a {
+  color: var(--text-muted);
+  padding: 0.2rem 0;
+  display: block;
+  transition: color 0.15s ease;
+  border-left: 2px solid transparent;
+  padding-left: 0.75rem;
+}
+
+.affix li a:hover,
+.affix li.active a {
+  color: var(--primary);
+  border-left-color: var(--primary);
+  text-decoration: none;
+}
+
+/* =====================================================================
+   FOOTER
+   ===================================================================== */
+footer {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-default);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-family: 'DM Sans', sans-serif;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+}
+
+footer a {
+  color: var(--accent-sage);
+}
+footer a:hover {
+  color: var(--primary);
+}
+
+/* =====================================================================
+   DARK MODE — surcharges spécifiques
+   ===================================================================== */
+[data-bs-theme="dark"] body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+[data-bs-theme="dark"] p {
+  color: var(--text-secondary);
+}
+
+[data-bs-theme="dark"] .navbar {
+  background-color: var(--navbar-bg);
+  border-bottom: none;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.03), 0 4px 20px rgba(0,0,0,0.4);
+}
+
+[data-bs-theme="dark"] .navbar-nav .nav-link.active,
+[data-bs-theme="dark"] .navbar-nav .nav-link.show {
+  color: var(--navbar-link-active) !important;
+  background-color: var(--link-active-bg) !important;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.5rem;
+}
+
+[data-bs-theme="dark"] pre,
+[data-bs-theme="dark"] code {
+  background-color: var(--code-bg);
+  color: var(--code-text);
+  border-color: var(--code-border);
+}
+
+[data-bs-theme="dark"] code {
+  color: var(--primary);
+}
+
+[data-bs-theme="dark"] table {
+  box-shadow: var(--shadow-card);
+}
+
+[data-bs-theme="dark"] thead th {
+  background-color: var(--primary);
+  color: var(--bg-main);
+}
+
+[data-bs-theme="dark"] blockquote {
+  background-color: var(--accent-sage-light);
+  border-color: var(--accent-sage);
+}
+
+[data-bs-theme="dark"] footer {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-default);
+}
+
+[data-bs-theme="dark"] .mermaid {
+  background-color: var(--bg-card);
+  border-color: var(--border-default);
+}
+
+/* =====================================================================
+   HAMBURGER / TOGGLER (mobile)
+   ===================================================================== */
+
+/* La navbar est toujours sombre → le toggler doit être clair */
+.navbar-toggler {
+  border: 1px solid rgba(200, 216, 200, 0.35) !important;
+  background-color: rgba(255, 255, 255, 0.06);
+  padding: 0.3rem 0.55rem;
+  border-radius: var(--radius-sm);
+  transition: background 0.15s ease;
+}
+.navbar-toggler:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(110, 201, 123, 0.4) !important;
+}
+
+/* Icône bi-three-dots — c'est un <i class="bi bi-three-dots"> avec ::before */
+/* La navbar est toujours sombre, donc on force la couleur claire */
+.navbar .bi-three-dots,
+.navbar .btn .bi-three-dots {
+  color: #A8CBAA !important;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.navbar .bi-three-dots::before {
+  color: #A8CBAA !important;
+}
+
+/* Bouton qui contient l'icône */
+.navbar .btn.d-md-none,
+.navbar button[data-bs-target="#navpanel"] {
+  border: 1px solid rgba(200, 216, 200, 0.3) !important;
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.55rem;
+  transition: background 0.15s ease;
+  line-height: 1;
+}
+.navbar .btn.d-md-none:hover,
+.navbar button[data-bs-target="#navpanel"]:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+.navbar .btn.d-md-none:focus,
+.navbar button[data-bs-target="#navpanel"]:focus {
+  box-shadow: 0 0 0 2px rgba(110, 201, 123, 0.35) !important;
+  outline: none;
+}
+
+/* =====================================================================
+   RESPONSIVE — MOBILE (breakpoint md = 768px, aligne avec d-md-none docfx)
+   ===================================================================== */
+
+/* Desktop : nav items alignes verticalement */
+@media (min-width: 768px) {
+  .navbar-nav {
+    align-items: center;
+  }
+  .navbar-nav .nav-link {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    line-height: 1;
+  }
+}
+
+/* Mobile : styles du panneau ouvert uniquement */
+/* NE PAS toucher display/visibility — docfx gere ca avec d-md-none */
+@media (max-width: 767.98px) {
+  /* Fond du panneau #navpanel quand il est ouvert */
+  #navpanel {
+    background-color: var(--navbar-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.5rem 0 0.75rem;
+  }
+
+  /* Items centres dans le panneau */
+  #navpanel .navbar-nav {
+    width: 100%;
+    text-align: center;
+    gap: 0.1rem;
+  }
+
+  #navpanel .navbar-nav .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  #navpanel .navbar-nav .nav-link {
+    text-align: center;
+    padding: 0.55rem 1rem;
+    font-size: 0.9rem;
+    border-radius: var(--radius-sm);
+    margin: 0 auto;
+    width: fit-content;
+    min-width: 160px;
+  }
+
+  #navpanel .navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+  /* Search dans le panneau mobile */
+  #navpanel .search {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 1rem 0.25rem;
+  }
+
+  #navpanel input[type="search"],
+  #navpanel input[type="text"],
+  #navpanel #search {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.1rem; }
+
+  article, .content, .article {
+    max-width: 100%;
+  }
+}
+
+/* =====================================================================
+   OVERRIDE FINAL — Search bar (neutralise Bootstrap .form-control)
+   ===================================================================== */
+.navbar input.form-control,
+.navbar .form-control,
+.navbar .input-group input,
+.navbar .input-group .form-control {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(200, 216, 200, 0.3) !important;
+  color: #D4EDCF !important;
+  box-shadow: none !important;
+}
+.navbar input.form-control:focus,
+.navbar .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.18) !important;
+  border-color: rgba(110, 201, 123, 0.55) !important;
+  box-shadow: 0 0 0 2px rgba(110, 201, 123, 0.15) !important;
+  color: #D4EDCF !important;
+}
+.navbar input.form-control::placeholder,
+.navbar .form-control::placeholder {
+  color: rgba(200, 216, 200, 0.38) !important;
+}
+@media (max-width: 767px) {
+  .navbar > .container-xxl {
+      flex-wrap: wrap !important;
+  }
+}
